@@ -1,0 +1,18 @@
+## Interface: 80100
+## Title: KillStream
+## Notes: Provides FPS-style kill notifications.
+## Author: atbigelow
+## Version: 1.0.0
+## SavedVariables: KillStreamData
+
+embeds.xml
+
+lib\LibStub\LibStub.lua
+lib\CallbackHandler-1.0\CallbackHandler-1.0.lua
+lib\LibDataBroker-1.1\LibDataBroker-1.1.lua
+lib\LibDBIcon-1.0\LibDBIcon-1.0.lua
+
+loc\enUS.lua
+
+core.lua
+gui.lua
