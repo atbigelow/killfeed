@@ -1,8 +1,8 @@
-## Interface: 90001
+## Interface: 90002
 ## Title: KillStream
 ## Notes: Provides FPS-style kill notifications.
 ## Author: atbigelow
-## Version: 1.0.0
+## Version: 1.0.2
 ## SavedVariables: KillStreamData
 
 embeds.xml

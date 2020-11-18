@@ -17,7 +17,7 @@ local L = LibStub("AceLocale-3.0"):GetLocale("KillStream", true)
 local Core = _G.KillStream
 local CombatData = { Units = {} }
 
-local KILLSTREAM_VERSION = "1.0.0"
+local KILLSTREAM_VERSION = "1.0.2"
 
 local UNITFLAG_TYPE_MASK = 0x0000FC00
 local UNITFLAG_TYPE_OBJECT = 0x00004000
@@ -490,6 +490,10 @@ function Core:ProcessDamageEvent(sourceGUID, sourceName, sourceFlags, destGUID, 
         Core:NewUnit(destGUID, destName, destFlags)
     end
 
+    -- "playerGUID" keeps seeping through the events, so try to filter this here?
+    if (sourceGUID == "playerGUID") then
+        sourceGUID = UnitGUID("player")
+    end
     Core:UpdateLastAttacker(destGUID, sourceGUID, sourceName, sourceFlags, spellID, spellName, spellSchool, isCritical, isEnvironmental)
 
     Core:PrintDebugLine("|cFFFFFFFFTime:|r" .. tostring(timestamp) .. "\n|cFFFFFFFFType:|r" .. tostring(type) .. " \n|cFFFFFFFFSourceName:|r " .. tostring(sourceName) .. " 	\n|cFFFFFFFFSourceFlags:|r " .. tostring(sourceFlags) .. " \n|cFFFFFFFFDestName:|r " .. tostring(destName) .. " \n|cFFFFFFFFDestFlags:|r " .. tostring(destFlags) .. " \n|cFFFFFFFF")
